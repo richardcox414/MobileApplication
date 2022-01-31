@@ -1,7 +1,8 @@
 <template>
     <div class="post">
-        <div v-if="loading" class="loading">
-            Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
+        <div v-show="loading" class="loading">
+            Loading... Please refresh once the ASP.NET backend has started. See 
+            <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
         </div>
 
         <div v-if="post" class="content">
@@ -11,7 +12,7 @@
                         <th>Date</th>
                         <th>Temp. (C)</th>
                         <th>Temp. (F)</th>
-                        <th>Summary</th>
+                        <th>Summary</th>                        
                     </tr>
                 </thead>
                 <tbody>
@@ -19,27 +20,28 @@
                         <td>{{ forecast.date }}</td>
                         <td>{{ forecast.temperatureC }}</td>
                         <td>{{ forecast.temperatureF }}</td>
-                        <td>{{ forecast.summary }}</td>
+                        <td>{{ forecast.summary }}</td>                        
                     </tr>
                 </tbody>
             </table>
+            <button type="button" class="btn btn-primary">Primary</button>           
         </div>
     </div>
 </template>
 
 <script lang="js">
-    import Vue from 'vue';
+    import Vue from 'vue';    
 
     export default Vue.extend({
         data() {
             return {
                 loading: false,
-                post: null
+                post: null,
+                loc: null
             };
         },
         created() {
-            // fetch the data when the view is created and the data is
-            // already being observed
+            // fetch the data when the view is created and the data is           
             this.fetchData();
         },
         watch: {
@@ -47,7 +49,6 @@
             '$route': 'fetchData'
         },
         methods: {
-
             fetchData() {
                 this.post = null;
                 this.loading = true;
@@ -61,7 +62,7 @@
                             return;
                         });
                 } catch (e) {
-                    console.log(r);
+                    console.log(e);
                 }               
             }
         },

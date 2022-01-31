@@ -1,0 +1,6 @@
+{
+  "appId": "com.MobileClientProject",
+  "appName": "MobileClient",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
