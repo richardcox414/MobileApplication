@@ -1,8 +1,7 @@
 <template>
     <div class="post">
         <div v-show="loading" class="loading">
-            Loading... Please refresh once the ASP.NET backend has started. See 
-            <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
+            Loading... Please refresh once the ASP.NET backend has started. Hello friend.ss
         </div>
 
         <div v-if="post" class="content">
@@ -16,6 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>Work dude</tr>
                     <tr v-for="forecast in post" :key="forecast.date">
                         <td>{{ forecast.date }}</td>
                         <td>{{ forecast.temperatureC }}</td>

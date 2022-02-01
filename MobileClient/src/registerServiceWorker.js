@@ -20,7 +20,13 @@ if (process.env.NODE_ENV === 'production') {
       console.log('New content is downloading.')
     },
     updated () {
-      console.log('New content is available; please refresh.')
+        console.log('New content is available; please refresh.');
+        // force a reload of the app if there is new content
+        caches.keys().then(function (names) {
+            for (let name of names) caches.delete(name);
+        });
+        console.log('Hello??');
+
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')

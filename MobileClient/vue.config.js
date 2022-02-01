@@ -31,3 +31,10 @@ module.exports = {
         port: 5002
     }
 }
+
+module.exports = {    
+    pwa: {
+        name: "KL Mobile Client",
+        themeColor: "#001933",
+    }
+};
